@@ -1,16 +1,15 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './robot.rb'
+require 'pry'
 
 class TestRobot < MiniTest::Test
 
-  def test_that_foreign_robot_neeing_repairs_sent_to_station_1
-    skip
-    # arrange
-
-    # act
-
-    # assert
+  def test_that_foreign_robot_needing_repairs_sent_to_station_1
+    robot = Robot.new
+    robot.needs_repairs = true
+    robot.foreign_model = true
+    assert_equal(1, robot.station)
   end
 
   def test_that_vintage_robot_needing_repairs_sent_to_station_2
