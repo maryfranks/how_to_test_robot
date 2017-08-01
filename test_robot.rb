@@ -31,12 +31,8 @@ class TestRobot < MiniTest::Test
   end
 
   def test_prioritize_tasks_with_empty_todo_list_returns_negative_one
-    skip
-    # arrange
-
-    # act
-
-    # assert
+    robot = Robot.new
+    assert_equal(-1, robot.prioritize_tasks)
   end
 
   def test_prioritize_tasks_with_todos_returns_max_todo_value
